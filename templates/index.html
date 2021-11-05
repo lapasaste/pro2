@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="de">
+ {% include "header.html" %}
+	<body>
+		<h1>Hallo {{ name }}!</h1>
+		<h3>Überblick über aktuelle Hausaufgaben.</h3>
+		<h3>Hausaufgabe erfassen</h3>
+		<a href="{{ url_for('erfassen')}}">Jetzt eine Hausaufgabe erfassen</a>
+
+		{% include "footer.html" %}
+	</body>
+</html>
