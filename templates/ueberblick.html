@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="de">
+ {% include "header.html" %}
+	<body>
+		<div id="main" class="container">
+			<h1>Überblick über aktuelle Hausaufgaben.</h1>
+			<p>{{Modul}}</p>
+			<p>{{Titel}}</p>
+			<p>{{Notizen}}</p>
+			<p>{{Priorität}}</p>
+			<p>{{Fälligkeit}}</p>
+		</div>
+
+		{% include "footer.html" %}
+	</body>
+</html>

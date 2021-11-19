@@ -2,52 +2,59 @@
 <html lang="en">
  {% include "header.html" %}
 <body>
-
-    <form method="POST">
-        <div class="form-modul">
-            <label>Bitte wähle das Modul aus</label>
+    <div id="main" class="container">
+        <form method="POST" action="{{url_for('erfassen')}}">
+        <div class="form-modul mb-3">
+            <label class="form-label">Bitte wähle das Modul aus</label>
             <select class="form-control" name="modul">
-                <option value="nothing">Bitte Modul auswählen</option>
-                <option value="content_markeitng">Content Marketing und Storytelling</option>
-                <option value="digital_markeitng">Digital Marketing</option>
-                <option value="innovationsmanagement">Innovationsmanagement</option>
-                <option value="nachhaltige_entwicklung">Nachhaltige Entwicklung</option>
-                <option value="product_management">Product Management for Digital Business</option>
-                <option value="programmierung_2">Programmierung 2</option>
-                <option value="projektmanagement_1">Projektmanagement 1</option>
-                <option value="requirements_engineering">Requirements Engineering</option>
+                <option value="nothing">--</option>
+                <option value="Content Marketing" name="content_marketing">Content Marketing und Storytelling</option>
+                <option value="Digital Marketing" name="digital_markeitng">Digital Marketing</option>
+                <option value="Innovationsmanagement" name="innovationsmanagement">Innovationsmanagement</option>
+                <option value="Nachhaltige Entwicklung" name="nachhaltige_entwicklung">Nachhaltige Entwicklung</option>
+                <option value="Product Management" name="product_management">Product Management for Digital Business</option>
+                <option value="Programmierung 2" name="programmierung_2">Programmierung 2</option>
+                <option value="Projektmanagement 1" name="projektmanagement_1">Projektmanagement 1</option>
+                <option value="Requirement Engineering" name="requirements_engineering">Requirements Engineering</option>
             </select>
         </div>
 
-        <div class="form-text">
-              <label>Titel der Hausaufgabe</label>
+        <div class="form-text mb-3">
+              <label class="form-label">Titel der Hausaufgabe</label>
               <input type="text" class="form-control" name="text_homework" placeholder="Thema definieren und Abstract abgeben">
         </div>
-        <div class="form-textarea">
-            <label>Notizen</label>
+        <div class="form-textarea mb-3">
+            <label class="form-label">Notizen</label>
             <textarea class="form-control" name="textarea_notice" placeholder="Notizen"></textarea>
         </div>
-        <div class="form-priority">
-            <label>Priorität</label>
+        <div class="form-priority mb-3">
+            <label class="form-label">Priorität</label>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="priority" value="leicht"> <label class="form-check-label">Leicht</label>
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="Leicht">
+                <label class="form-check-label" for="flexRadioDefault1">leicht</label>
             </div>
-
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="priority" value="mittel"> <label class="form-check-label">Mittel</label>
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Mittel" checked>
+                <label class="form-check-label" for="flexRadioDefault2">mittel</label>
             </div>
-
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="priority" value="hoch"> <label class="form-check-label">Hoch</label>
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="Hoch">
+                <label class="form-check-label" for="flexRadioDefault2">hoch</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" value="Dringend">
+                <label class="form-check-label" for="flexRadioDefault2">dringend</label>
             </div>
         </div>
-        <div class="form-time">
-            <label>Fälligkeitsdatum *</label> <input type="date" class="form-control form-control-sm" name="date" value="">
-        </div>
-        <small>Felder markiert mit * sind Pflichtfelder.</small> <br>
 
-        <button type="submit">Speichern</button>
-    </form>
+        <div class="form-time mb-3">
+            <label class="form-label">Fälligkeitsdatum *</label> <input type="date" class="form-control form-control-sm" name="date" value="">
+        </div>
+        <small class="form-text">Felder markiert mit * sind Pflichtfelder.</small> <br>
+
+        <button class="btn btn-primary" type="submit">Speichern</button>
+        </form>
+    </div>
 
     {% include "footer.html" %}
 </body>

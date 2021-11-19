@@ -1,0 +1,17 @@
+{
+    "F\u00e4lligkeitsdatum":[
+        "date"
+    ],
+    "Modul":[
+        "modul"
+    ],
+    "Notizen":[
+        "textarea_notice"
+    ],
+    "Priorit\u00e4t":[
+        "flexRadioDefault"
+    ],
+    "Titel der Hausaufgabe":[
+        "text_homework"
+    ]
+}

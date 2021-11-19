@@ -1,8 +1,29 @@
+header {
+    min-height: 200px;
+}
+
+.navbar {
+    background-color: #97c8b1;
+}
+
+#main {
+    min-height: 350px;
+}
+
 h1 {
   color: green;
+}
+
+#homeworkerfassen, button {
+    color: white;
 }
 
 form {
     width: 400px;
 }
 
+footer {
+    min-height: 200px;
+    margin-top: 50px;
+    background-color: black;
+}
