@@ -1,17 +1,23 @@
-{
-    "F\u00e4lligkeitsdatum":[
-        "date"
-    ],
-    "Modul":[
-        "modul"
-    ],
-    "Notizen":[
-        "textarea_notice"
-    ],
-    "Priorit\u00e4t":[
-        "flexRadioDefault"
-    ],
-    "Titel der Hausaufgabe":[
-        "text_homework"
-    ]
-}
+[
+    {
+        "faelligkeitdatum":"2021-12-24",
+        "modul":"Nachhaltige Entwicklung",
+        "notizen":"Geile Siech",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":"Nici"
+    },
+    {
+        "faelligkeitdatum":"2021-12-04",
+        "modul":"Nachhaltige Entwicklung",
+        "notizen":"Geilesrtzertz Siech",
+        "prioritaet":"Dringend",
+        "titelHausaufgabe":"Nicisert"
+    },
+    {
+        "faelligkeitdatum":"",
+        "modul":"Nachhaltige Entwicklung",
+        "notizen":"",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":""
+    }
+]
