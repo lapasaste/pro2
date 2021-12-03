@@ -1,9 +1,20 @@
 header {
     min-height: 200px;
+    margin-bottom: 60px;
+}
+
+header img {
+    width: 250px;
 }
 
 .navbar {
-    background-color: #97c8b1;
+    background-color: #0d6efd;
+}
+
+nav a {
+    color: white!important;
+    font-size: 21px;
+    padding: 10px 20px;
 }
 
 #main {
@@ -11,7 +22,11 @@ header {
 }
 
 h1 {
-  color: green;
+  color: #0d6efd;
+}
+
+button a {
+    text-decoration: none;
 }
 
 #homeworkerfassen, button {

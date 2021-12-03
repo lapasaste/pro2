@@ -4,10 +4,7 @@
 	<body>
 		<div id="main" class="container">
 			<h1>Hallo {{ name }}!</h1>
-			<h3>Hausaufgabe erfassen</h3>
 			<button type="button" class="btn btn-primary"><a style="color: white;" href="{{ url_for('erfassen')}}">Jetzt eine Hausaufgabe erfassen</a></button>
-			<h3>Überblick über aktuelle Hausaufgaben.</h3>
-			<li>{{Modul}}</li>
 		</div>
 
 		{% include "footer.html" %}

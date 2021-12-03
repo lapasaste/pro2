@@ -19,5 +19,26 @@
         "notizen":"",
         "prioritaet":"Mittel",
         "titelHausaufgabe":""
+    },
+    {
+        "faelligkeitdatum":"2021-12-10",
+        "modul":"Innovationsmanagement",
+        "notizen":"Schwubele",
+        "prioritaet":"Dringend",
+        "titelHausaufgabe":"Hello Dominik"
+    },
+    {
+        "faelligkeitdatum":"2021-12-23",
+        "modul":"Digital Marketing",
+        "notizen":"",
+        "prioritaet":"Hoch",
+        "titelHausaufgabe":"Blog fertig aufsetzen"
+    },
+    {
+        "faelligkeitdatum":"2021-12-24",
+        "modul":"Content Marketing",
+        "notizen":"mit Word erledigen",
+        "prioritaet":"Hoch",
+        "titelHausaufgabe":"Doku finalisieren"
     }
 ]
