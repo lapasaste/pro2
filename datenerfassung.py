@@ -9,7 +9,6 @@ homework_dict = {"Modul": ["modul"],
     "Priorität": ["flexRadioDefault"],
     "Fälligkeitsdatum": ["date"]
                  }
-
 print(homework_dict)
 
 with open("datenspeicher.json", "w") as f:

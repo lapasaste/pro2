@@ -1,5 +1,6 @@
 from flask import Flask, request
 from flask import render_template
+from datetime import datetime
 import json
 
 app = Flask("Hello You")
@@ -12,7 +13,17 @@ def hello():
 
 @app.route('/ueberblick')
 def ueberblick():
-    return render_template("ueberblick.html")
+    d = open("datenspeicher.json")
+    datenspeicher_list = json.load(d)
+
+
+    #list_data = "Modul"
+    #list_data_values = [testii[list_data] for testii in datenspeicher_list]
+    #Möchte jedes Dict in ein Accordion integrieren, aber ich komme nicht weiter...
+    for einblock in datenspeicher_list:
+        print(einblock)
+
+    return render_template("ueberblick.html", hausgabehausaufgabe=einblock)
 
 @app.route('/erfassen', methods=['GET', 'POST'])
 def erfassen():
@@ -30,8 +41,7 @@ def erfassen():
         with open("datenspeicher.json", "w") as f:
             json.dump(datenspeicher_list, f, indent=4, separators=(",", ":"), sort_keys=True)
 
-        return render_template("ueberblick.html", Modul=modul, Titel=titletext, Notizen=notizen, Priorität=prioritaet, Fälligkeit=faelligkeit)
-
+        return render_template("ueberblick.html", testii=datenspeicher_list[0])
 
     else:
         return render_template("formular.html")

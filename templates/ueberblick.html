@@ -4,11 +4,6 @@
 	<body>
 		<div id="main" class="container">
 			<h1>Überblick über aktuelle Hausaufgaben.</h1>
-			<p>{{Modul}}</p>
-			<p>{{Titel}}</p>
-			<p>{{Notizen}}</p>
-			<p>{{Priorität}}</p>
-			<p>{{Fälligkeit}}</p>
 			<div class="accordion accordion-flush" id="accordionFlushExample">
 				<div class="accordion-item">
 					<h2 class="accordion-header" id="flush-headingOne">
@@ -17,7 +12,12 @@
 						</button>
 					</h2>
 					<div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-						<div class="accordion-body">Details zur Hausaufgabe.</div>
+						<div class="accordion-body">
+							<p>{{hausgabehausaufgabe}}</p>
+							<p>{{Notizen}}</p>
+							<p>{{Priorität}}</p>
+							<p>{{Fälligkeit}}</p>
+						</div>
 					</div>
 			  	</div>
 				<div class="accordion-item">
@@ -27,7 +27,7 @@
 						</button>
 					</h2>
 					<div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-				  		<div class="accordion-body">Details zur Hausaufgabe.</div>
+				  		<div class="accordion-body">{{hausgabehausaufgabe}}</div>
 					</div>
 			  	</div>
 				<div class="accordion-item">

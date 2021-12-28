@@ -40,5 +40,173 @@
         "notizen":"mit Word erledigen",
         "prioritaet":"Hoch",
         "titelHausaufgabe":"Doku finalisieren"
+    },
+    {
+        "faelligkeitdatum":"",
+        "modul":"nothing",
+        "notizen":"",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":""
+    },
+    {
+        "faelligkeitdatum":"2021-12-31",
+        "modul":"Innovationsmanagement",
+        "notizen":"ohne \u00dcberg\u00e4nge",
+        "prioritaet":"Dringend",
+        "titelHausaufgabe":"Pr\u00e4si designen"
+    },
+    {
+        "faelligkeitdatum":"2021-12-22",
+        "modul":"Digital Marketing",
+        "notizen":"Testhaloo",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":"Test"
+    },
+    {
+        "faelligkeitdatum":"2021-12-22",
+        "modul":"Digital Marketing",
+        "notizen":"Testhaloo",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":"Test"
+    },
+    {
+        "faelligkeitdatum":"2021-12-31",
+        "modul":"Projektmanagement 1",
+        "notizen":"Guggus",
+        "prioritaet":"Hoch",
+        "titelHausaufgabe":"Hallo"
+    },
+    {
+        "faelligkeitdatum":"2021-12-31",
+        "modul":"Projektmanagement 1",
+        "notizen":"Guggus",
+        "prioritaet":"Hoch",
+        "titelHausaufgabe":"Hallo"
+    },
+    {
+        "faelligkeitdatum":"2021-12-30",
+        "modul":"Nachhaltige Entwicklung",
+        "notizen":"dsfgs",
+        "prioritaet":"Hoch",
+        "titelHausaufgabe":"fs"
+    },
+    {
+        "faelligkeitdatum":"2021-12-30",
+        "modul":"Nachhaltige Entwicklung",
+        "notizen":"dsfgs",
+        "prioritaet":"Hoch",
+        "titelHausaufgabe":"fs"
+    },
+    {
+        "faelligkeitdatum":"",
+        "modul":"Nachhaltige Entwicklung",
+        "notizen":"asd",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":"sad"
+    },
+    {
+        "faelligkeitdatum":"",
+        "modul":"Nachhaltige Entwicklung",
+        "notizen":"asd",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":"sad"
+    },
+    {
+        "faelligkeitdatum":"",
+        "modul":"Innovationsmanagement",
+        "notizen":"sdf",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":"dfs"
+    },
+    {
+        "faelligkeitdatum":"",
+        "modul":"Innovationsmanagement",
+        "notizen":"sdf",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":"dfs"
+    },
+    {
+        "faelligkeitdatum":"",
+        "modul":"Innovationsmanagement",
+        "notizen":"sdf",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":"dfs"
+    },
+    {
+        "faelligkeitdatum":"",
+        "modul":"Innovationsmanagement",
+        "notizen":"sdf",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":"dfs"
+    },
+    {
+        "faelligkeitdatum":"",
+        "modul":"Innovationsmanagement",
+        "notizen":"sdf",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":"dfs"
+    },
+    {
+        "faelligkeitdatum":"",
+        "modul":"Innovationsmanagement",
+        "notizen":"sdf",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":"dfs"
+    },
+    {
+        "faelligkeitdatum":"2021-12-23",
+        "modul":"Nachhaltige Entwicklung",
+        "notizen":"wetwe",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":"test"
+    },
+    {
+        "faelligkeitdatum":"",
+        "modul":"Innovationsmanagement",
+        "notizen":"sdf",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":"dfs"
+    },
+    {
+        "faelligkeitdatum":"",
+        "modul":"Innovationsmanagement",
+        "notizen":"sdf",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":"dfs"
+    },
+    {
+        "faelligkeitdatum":"",
+        "modul":"Innovationsmanagement",
+        "notizen":"sdf",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":"dfs"
+    },
+    {
+        "faelligkeitdatum":"",
+        "modul":"Innovationsmanagement",
+        "notizen":"sdf",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":"dfs"
+    },
+    {
+        "faelligkeitdatum":"2021-12-14",
+        "modul":"Product Management",
+        "notizen":"Blabla",
+        "prioritaet":"Hoch",
+        "titelHausaufgabe":"Testerassung"
+    },
+    {
+        "faelligkeitdatum":"2021-12-14",
+        "modul":"Product Management",
+        "notizen":"Blabla",
+        "prioritaet":"Hoch",
+        "titelHausaufgabe":"Testerassung"
+    },
+    {
+        "faelligkeitdatum":"2021-12-14",
+        "modul":"Product Management",
+        "notizen":"Blabla",
+        "prioritaet":"Hoch",
+        "titelHausaufgabe":"Testerassung"
     }
 ]
