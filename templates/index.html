@@ -3,8 +3,29 @@
  {% include "header.html" %}
 	<body>
 		<div id="main" class="container">
-			<h1>Hallo {{ name }}!</h1>
-			<button type="button" class="btn btn-primary"><a style="color: white;" href="{{ url_for('erfassen')}}">Jetzt eine Hausaufgabe erfassen</a></button>
+			<h1>Hallo!</h1>
+			<p>Das ist der Hausaufgabenerfasser von Stefan Boog. Im Modul Programmierung 2 vom Studiengang "Digital Business Management" sind die Studierenden dazu beauftragt worden, eine Applikation zu programmieren. Ich habe mich dazu entschlossen, einen Hausaufgabenerfasser zu erstellen. Die Priorität wird anhand des Fälligkeitsdatum automatisch angepasst. Zudem können die Hausaufgaben nach gewissen attributen soritert werden. </p>
+			<!--Cards von getbootstrap.com-->
+			<div class="row cardhome">
+			  <div class="col-sm-6">
+				<div class="card">
+				  <div class="card-body">
+					<h5 class="card-title">Hausaufgabe erfassen</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<a href="erfassen" class="btn btn-primary">Jetzt erfassen</a>
+				  </div>
+				</div>
+			  </div>
+			  <div class="col-sm-6">
+				<div class="card">
+				  <div class="card-body">
+					<h5 class="card-title">Überblick der Hausaufgaben</h5>
+					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					<a href="ueberblick" class="btn btn-primary">Zum Überblick</a>
+				  </div>
+				</div>
+			  </div>
+			</div>
 		</div>
 
 		{% include "footer.html" %}
