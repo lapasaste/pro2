@@ -1,8 +1,6 @@
 
 import json
 
-import main
-
 homework_dict = {"Modul": ["modul"],
     "Titel der Hausaufgabe": ["text_homework"],
     "Notizen": ["textarea_notice"],

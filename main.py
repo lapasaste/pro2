@@ -39,29 +39,28 @@ def ueberblick():
 
     for eintrag in datenspeicher_list:
         if eintrag["modul"] == "Content Marketing":
-            contentmarketing_list.append(eintrag)
+            contentmarketing_list.append((eintrag["titelHausaufgabe"], eintrag["faelligkeitdatum"], eintrag["notizen"], eintrag["prioritaet"]))
 
         elif eintrag["modul"] == "Digital Marketing":
-            digitalmarketing_list.append(eintrag)
+            digitalmarketing_list.append((eintrag["titelHausaufgabe"], eintrag["faelligkeitdatum"], eintrag["notizen"], eintrag["prioritaet"]))
 
         elif eintrag["modul"] == "Innovationsmanagement":
-            innovationsmanagement_list.append(eintrag)
+            innovationsmanagement_list.append((eintrag["titelHausaufgabe"], eintrag["faelligkeitdatum"], eintrag["notizen"], eintrag["prioritaet"]))
 
         elif eintrag["modul"] == "Nachhaltige Entwicklung":
-            nachhaltige_list.append(eintrag)
+            nachhaltige_list.append((eintrag["titelHausaufgabe"], eintrag["faelligkeitdatum"], eintrag["notizen"], eintrag["prioritaet"]))
 
         elif eintrag["modul"] == "Product Management":
-            productmanagement_list.append(eintrag)
+            productmanagement_list.append((eintrag["titelHausaufgabe"], eintrag["faelligkeitdatum"], eintrag["notizen"], eintrag["prioritaet"]))
 
         elif eintrag["modul"] == "Programmieren 2":
-            programmieren_list.append(eintrag)
-
+            programmieren_list.append((eintrag["titelHausaufgabe"], eintrag["faelligkeitdatum"], eintrag["notizen"], eintrag["prioritaet"]))
 
         elif eintrag["modul"] == "Projektmanagement 1":
-            projektmanagement_list.append(eintrag)
+            projektmanagement_list.append((eintrag["titelHausaufgabe"], eintrag["faelligkeitdatum"], eintrag["notizen"], eintrag["prioritaet"]))
 
         elif eintrag["modul"] == "Requirement Engineering":
-            requirements_list.append(eintrag)
+            requirements_list.append((eintrag["titelHausaufgabe"], eintrag["faelligkeitdatum"], eintrag["notizen"], eintrag["prioritaet"]))
 
     #Anzahl Einträge in Modulen
     Zcon = len(contentmarketing_list)
@@ -73,7 +72,7 @@ def ueberblick():
     Zprojekt = len(projektmanagement_list)
     Zreque = len(requirements_list)
 
-    return render_template("ueberblick.html", anzahlcontent=Zcon, anzahldigital=Zdigma, anzahlinno=Zinno, anzahlnachhaltig=Znachhaltig, anzahlproduct=Zproduct, anzahlprog=Zprog, anzahlprojekt=Zprojekt, anzahlreque=Zreque, contentmarketing=contentmarketing_list, digitalmarketing=digitalmarketing_list, innovationsmanagement=innovationsmanagement_list, nachhaltigeentwicklung=nachhaltige_list,productmanagement=productmanagement_list, programmieren=programmieren_list, projektmanagement=projektmanagement_list, requirements=requirements_list)
+    return render_template("ueberblick.html", anzahlcontent=Zcon, anzahldigital=Zdigma, anzahlinno=Zinno, anzahlnachhaltig=Znachhaltig, anzahlproduct=Zproduct, anzahlprog=Zprog, anzahlprojekt=Zprojekt, anzahlreque=Zreque, contentmarketing_list=contentmarketing_list, digitalmarketing_list=digitalmarketing_list, innovationsmanagement_list=innovationsmanagement_list, nachhaltige_list=nachhaltige_list, productmanagemen_list=productmanagement_list, programmieren_list=programmieren_list, projektmanagement_list=projektmanagement_list, requirements_list=requirements_list)
 
 
 
@@ -93,7 +92,7 @@ def erfassen():
         with open("datenspeicher.json", "w") as datenbank_hausaufgaben:
             json.dump(datenspeicher_list, datenbank_hausaufgaben, indent=4, separators=(",", ":"))
 
-        return render_template("ueberblick.html", testii=datenspeicher_list[0])
+        return render_template("formular.html", testii=datenspeicher_list[0], erfolgreich="Neue Hausaufgabe wurde erfolgreich erfasst.")
 
     else:
         return render_template("formular.html")
