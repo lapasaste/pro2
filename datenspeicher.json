@@ -208,5 +208,82 @@
         "notizen":"Blabla",
         "prioritaet":"Hoch",
         "titelHausaufgabe":"Testerassung"
+    },
+    {
+        "faelligkeitdatum":"2022-01-03",
+        "modul":"Digital Marketing",
+        "notizen":"Bla Bla",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":"Test Home"
+    },
+    {
+        "faelligkeitdatum":"2022-01-12",
+        "modul":"Product Management",
+        "notizen":"Das funktioniert ja",
+        "prioritaet":"Hoch",
+        "titelHausaufgabe":"Bl\u00f6des Modul"
+    },
+    {
+        "faelligkeitdatum":"2022-01-12",
+        "modul":"Product Management",
+        "notizen":"Das funktioniert ja",
+        "prioritaet":"Hoch",
+        "titelHausaufgabe":"Bl\u00f6des Modul"
+    },
+    {
+        "faelligkeitdatum":"2022-01-12",
+        "modul":"Product Management",
+        "notizen":"Das funktioniert ja",
+        "prioritaet":"Hoch",
+        "titelHausaufgabe":"Bl\u00f6des Modul"
+    },
+    {
+        "faelligkeitdatum":"",
+        "modul":"Nachhaltige Entwicklung",
+        "notizen":"Wuhu",
+        "prioritaet":"Mittel",
+        "titelHausaufgabe":"Test"
+    },
+    {
+        "faelligkeitdatum":"2022-01-12",
+        "modul":"Nachhaltige Entwicklung",
+        "notizen":"wichtig",
+        "prioritaet":"Hoch",
+        "titelHausaufgabe":"Arbeit abgeben"
+    },
+    {
+        "faelligkeitdatum":"",
+        "modul":"Programmierung 2",
+        "notizen":"hehe",
+        "prioritaet":"Leicht",
+        "titelHausaufgabe":"Blabla"
+    },
+    {
+        "faelligkeitdatum":"2022-01-13",
+        "modul":"Nachhaltige Entwicklung",
+        "notizen":"Hallo",
+        "prioritaet":"Hoch",
+        "titelHausaufgabe":"Test"
+    },
+    {
+        "modul":"Content Marketing",
+        "titelHausaufgabe":"Neue Hausaufgabe CM",
+        "faelligkeitdatum":"2022-01-14",
+        "prioritaet":"Hoch",
+        "notizen":"Neue Sortierung"
+    },
+    {
+        "modul":"Digital Marketing",
+        "titelHausaufgabe":"Test z\u00e4hlen",
+        "faelligkeitdatum":"2022-01-07",
+        "prioritaet":"Hoch",
+        "notizen":"Hallo "
+    },
+    {
+        "modul":"Content Marketing",
+        "titelHausaufgabe":"Test Datum ohne String",
+        "faelligkeitdatum":"2022-01-21",
+        "prioritaet":"Mittel",
+        "notizen":"jap"
     }
 ]

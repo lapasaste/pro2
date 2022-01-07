@@ -8,8 +8,8 @@ homework_dict = {"Modul": ["modul"],
     "Notizen": ["textarea_notice"],
     "Priorität": ["flexRadioDefault"],
     "Fälligkeitsdatum": ["date"]
-                 }
+}
 print(homework_dict)
 
-with open("datenspeicher.json", "w") as f:
-    json.dump(homework_dict, f, indent=4, separators=(",", ":"), sort_keys=True)
+with open("datenspeicher.json", "w") as datenbank_hausaufgaben:
+    json.dump(homework_dict, datenbank_hausaufgaben, indent=4, separators=(",", ":"))

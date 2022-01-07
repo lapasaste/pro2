@@ -3,11 +3,11 @@
  {% include "header.html" %}
 	<body>
 		<div id="main" class="container">
-			<h1>Hallo!</h1>
+			<h1>Herzlich Willkommen!</h1>
 			<p>Das ist der Hausaufgabenerfasser von Stefan Boog. Im Modul Programmierung 2 vom Studiengang "Digital Business Management" sind die Studierenden dazu beauftragt worden, eine Applikation zu programmieren. Ich habe mich dazu entschlossen, einen Hausaufgabenerfasser zu erstellen. Die Priorität wird anhand des Fälligkeitsdatum automatisch angepasst. Zudem können die Hausaufgaben nach gewissen attributen soritert werden. </p>
 			<!--Cards von getbootstrap.com-->
 			<div class="row cardhome">
-			  <div class="col-sm-6">
+			  <div class="col-sm-3">
 				<div class="card">
 				  <div class="card-body">
 					<h5 class="card-title">Hausaufgabe erfassen</h5>
@@ -16,12 +16,34 @@
 				  </div>
 				</div>
 			  </div>
-			  <div class="col-sm-6">
+			  <div class="col-sm-3">
 				<div class="card">
 				  <div class="card-body">
 					<h5 class="card-title">Überblick der Hausaufgaben</h5>
 					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 					<a href="ueberblick" class="btn btn-primary">Zum Überblick</a>
+				  </div>
+				</div>
+			  </div>
+			  <div class="col-sm-6">
+				<div class="card">
+				  <div class="card-body">
+					<h5 class="card-title">Die neusten Einträge</h5>
+					  <table class="table table-hover table-striped">
+					  	<thead class="thead-dark">
+					  		<th scope="col">Fälligkeit</th>
+							<th scope="col">Modul</th>
+							<th scope="col">Titel</th>
+					  	</thead>
+					 	{% for date in datum_list %}
+						<tr>
+							<td>{{ date[0] }}</td>
+							<td>{{ date[1] }}</td>
+							<td>{{ date[2] }}</td>
+						</tr>
+						{% endfor %}
+					  </table>
+					  <a href="ueberblick" class="btn btn-primary">Zum Überblick</a>
 				  </div>
 				</div>
 			  </div>
