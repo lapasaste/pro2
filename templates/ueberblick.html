@@ -4,6 +4,7 @@
 	<body>
 		<div id="main" class="container">
 			<h1>Überblick über aktuelle Hausaufgaben.</h1>
+			<button type="button" class="btn btn-light formerfolgreich">{{erfolgreich}}</button>
 			<div class="accordion accordion-flush" id="accordionFlushExample">
 				<div class="accordion-item">
 					<h2 class="accordion-header" id="flush-headingOne">
@@ -11,25 +12,40 @@
 						Content Marketing und Storytelling
 						</button>
 					</h2>
+
 					<div class="accodion-anzahl">Anzahl Einträge: {{anzahlcontent}}</div>
 					<div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-						<div class="accordion-body">
-							<table class="table table-hover table-striped">
-								<thead class="thead-dark">
-									<th scope="col">Titel</th>
-									<th scope="col">Fälligkeit</th>
-									<th scope="col">Notizen</th>
-									<th scope="col">Priorität</th>
-								</thead>
-								{% for eintrag in contentmarketing_list %}
-								<tr>
-									<td>{{ eintrag[0]}}</td>
-									<td>{{ eintrag[1]}}</td>
-									<td>{{ eintrag[2]}}</td>
-									<td>{{ eintrag[3]}}</td>
-								</tr>
-								{% endfor %}
-						  	</table>
+						<div class="accordion-body">{{contentmarketing}}
+							<form class="formueberblick" method="POST" action="{{url_for('ueberblick')}}">
+								<table class="table table-hover table-striped">
+									<thead class="thead-dark">
+										<th scope="col">Erledigt?</th>
+										<th scope="col">Titel</th>
+										<th scope="col">Fälligkeit</th>
+										<th scope="col">Notizen</th>
+										<th scope="col">Priorität</th>
+									</thead>
+									{% for eintrag in contentmarketing_list %}
+									<tr>
+										<td>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault5" value="Nein" checked>
+												<label class="form-check-label" for="flexRadioDefault1">nein</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault6" value="Ja">
+												<label class="form-check-label" for="flexRadioDefault2">ja</label>
+											</div>
+										</td>
+										<td>{{ eintrag[1]}}</td>
+										<td>{{ eintrag[2]}}</td>
+										<td>{{ eintrag[3]}}</td>
+										<td>{{ eintrag[4]}}</td>
+									</tr>
+									{% endfor %}
+								</table>
+							<button class="btn btn-primary" type="submit">Speichern</button>
+							</form>
 						</div>
 					</div>
 			  	</div>
@@ -41,23 +57,38 @@
 					</h2>
 					<div class="accodion-anzahl">Anzahl Einträge: {{anzahldigital}}</div>
 					<div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-				  		<div class="accordion-body">{{digitalmarketing}}</div>
-							<table class="table table-hover table-striped">
-								<thead class="thead-dark">
-									<th scope="col">Titel</th>
-									<th scope="col">Fälligkeit</th>
-									<th scope="col">Notizen</th>
-									<th scope="col">Priorität</th>
-								</thead>
-								{% for eintrag in digitalmarketing_list %}
-								<tr>
-									<td>{{ eintrag[0]}}</td>
-									<td>{{ eintrag[1]}}</td>
-									<td>{{ eintrag[2]}}</td>
-									<td>{{ eintrag[3]}}</td>
-								</tr>
-								{% endfor %}
-						  	</table>
+				  		<div class="accordion-body">{{digitalmarketing}}
+							<form class="formueberblick" method="POST" action="{{url_for('ueberblick')}}">
+								<table class="table table-hover table-striped">
+									<thead class="thead-dark">
+										<th scope="col">Erledigt?</th>
+										<th scope="col">Titel</th>
+										<th scope="col">Fälligkeit</th>
+										<th scope="col">Notizen</th>
+										<th scope="col">Priorität</th>
+									</thead>
+									{% for eintrag in digitalmarketing_list %}
+									<tr>
+										<td>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault5" value="Nein" checked>
+												<label class="form-check-label" for="flexRadioDefault1">nein</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault6" value="Ja">
+												<label class="form-check-label" for="flexRadioDefault2">ja</label>
+											</div>
+										</td>
+										<td>{{ eintrag[1]}}</td>
+										<td>{{ eintrag[2]}}</td>
+										<td>{{ eintrag[3]}}</td>
+										<td>{{ eintrag[4]}}</td>
+									</tr>
+									{% endfor %}
+								</table>
+							<button class="btn btn-primary" type="submit">Speichern</button>
+							</form>
+						</div>
 					</div>
 			  	</div>
 				<div class="accordion-item">
@@ -68,23 +99,38 @@
 					</h2>
 					<div class="accodion-anzahl">Anzahl Einträge: {{anzahlinno}}</div>
 					<div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-				  		<div class="accordion-body">{{innovationsmanagement}}</div>
-							<table class="table table-hover table-striped">
-								<thead class="thead-dark">
-									<th scope="col">Titel</th>
-									<th scope="col">Fälligkeit</th>
-									<th scope="col">Notizen</th>
-									<th scope="col">Priorität</th>
-								</thead>
-								{% for eintrag in innovationsmanagement_list %}
-								<tr>
-									<td>{{ eintrag[0]}}</td>
-									<td>{{ eintrag[1]}}</td>
-									<td>{{ eintrag[2]}}</td>
-									<td>{{ eintrag[3]}}</td>
-								</tr>
-								{% endfor %}
-						  	</table>
+				  		<div class="accordion-body">{{innovationsmanagement}}
+							<form class="formueberblick" method="POST" action="{{url_for('ueberblick')}}">
+								<table class="table table-hover table-striped">
+									<thead class="thead-dark">
+										<th scope="col">Erledigt?</th>
+										<th scope="col">Titel</th>
+										<th scope="col">Fälligkeit</th>
+										<th scope="col">Notizen</th>
+										<th scope="col">Priorität</th>
+									</thead>
+									{% for eintrag in innovationsmanagement_list %}
+									<tr>
+										<td>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault5" value="Nein" checked>
+												<label class="form-check-label" for="flexRadioDefault1">nein</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault6" value="Ja">
+												<label class="form-check-label" for="flexRadioDefault2">ja</label>
+											</div>
+										</td>
+										<td>{{ eintrag[1]}}</td>
+										<td>{{ eintrag[2]}}</td>
+										<td>{{ eintrag[3]}}</td>
+										<td>{{ eintrag[4]}}</td>
+									</tr>
+									{% endfor %}
+								</table>
+							<button class="btn btn-primary" type="submit">Speichern</button>
+							</form>
+						</div>
 					</div>
 			  	</div>
 				<div class="accordion-item">
@@ -95,23 +141,38 @@
 					</h2>
 					<div class="accodion-anzahl">Anzahl Einträge: {{anzahlnachhaltig}}</div>
 					<div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-				  		<div class="accordion-body">{{nachhaltigeentwicklung}}</div>
-							<table class="table table-hover table-striped">
-								<thead class="thead-dark">
-									<th scope="col">Titel</th>
-									<th scope="col">Fälligkeit</th>
-									<th scope="col">Notizen</th>
-									<th scope="col">Priorität</th>
-								</thead>
-								{% for eintrag in nachhaltige_list %}
-								<tr>
-									<td>{{ eintrag[0]}}</td>
-									<td>{{ eintrag[1]}}</td>
-									<td>{{ eintrag[2]}}</td>
-									<td>{{ eintrag[3]}}</td>
-								</tr>
-								{% endfor %}
-						  	</table>
+				  		<div class="accordion-body">{{nachhaltigeentwicklung}}
+							<form class="formueberblick" method="POST" action="{{url_for('ueberblick')}}">
+								<table class="table table-hover table-striped">
+									<thead class="thead-dark">
+										<th scope="col">Erledigt?</th>
+										<th scope="col">Titel</th>
+										<th scope="col">Fälligkeit</th>
+										<th scope="col">Notizen</th>
+										<th scope="col">Priorität</th>
+									</thead>
+									{% for eintrag in nachhaltige_list %}
+									<tr>
+										<td>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault5" value="Nein" checked>
+												<label class="form-check-label" for="flexRadioDefault1">nein</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault6" value="Ja">
+												<label class="form-check-label" for="flexRadioDefault2">ja</label>
+											</div>
+										</td>
+										<td>{{ eintrag[1]}}</td>
+										<td>{{ eintrag[2]}}</td>
+										<td>{{ eintrag[3]}}</td>
+										<td>{{ eintrag[4]}}</td>
+									</tr>
+									{% endfor %}
+								</table>
+							<button class="btn btn-primary" type="submit">Speichern</button>
+							</form>
+						</div>
 					</div>
 			  	</div>
 				<div class="accordion-item">
@@ -122,23 +183,38 @@
 					</h2>
 					<div class="accodion-anzahl">Anzahl Einträge: {{anzahlproduct}}</div>
 					<div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
-				  		<div class="accordion-body">{{productmanagement}}</div>
-							<table class="table table-hover table-striped">
-								<thead class="thead-dark">
-									<th scope="col">Titel</th>
-									<th scope="col">Fälligkeit</th>
-									<th scope="col">Notizen</th>
-									<th scope="col">Priorität</th>
-								</thead>
-								{% for eintrag in productmanagement_list %}
-								<tr>
-									<td>{{ eintrag[0]}}</td>
-									<td>{{ eintrag[1]}}</td>
-									<td>{{ eintrag[2]}}</td>
-									<td>{{ eintrag[3]}}</td>
-								</tr>
-								{% endfor %}
-						  	</table>
+				  		<div class="accordion-body">{{productmanagement}}
+							<form class="formueberblick" method="POST" action="{{url_for('ueberblick')}}">
+								<table class="table table-hover table-striped">
+									<thead class="thead-dark">
+										<th scope="col">Erledigt?</th>
+										<th scope="col">Titel</th>
+										<th scope="col">Fälligkeit</th>
+										<th scope="col">Notizen</th>
+										<th scope="col">Priorität</th>
+									</thead>
+									{% for eintrag in productmanagement_list %}
+									<tr>
+										<td>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault5" value="Nein" checked>
+												<label class="form-check-label" for="flexRadioDefault1">nein</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault6" value="Ja">
+												<label class="form-check-label" for="flexRadioDefault2">ja</label>
+											</div>
+										</td>
+										<td>{{ eintrag[1]}}</td>
+										<td>{{ eintrag[2]}}</td>
+										<td>{{ eintrag[3]}}</td>
+										<td>{{ eintrag[4]}}</td>
+									</tr>
+									{% endfor %}
+								</table>
+							<button class="btn btn-primary" type="submit">Speichern</button>
+							</form>
+						</div>
 					</div>
 			  	</div>
 				<div class="accordion-item">
@@ -149,23 +225,38 @@
 					</h2>
 					<div class="accodion-anzahl">Anzahl Einträge: {{anzahlprog}}</div>
 					<div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
-				  		<div class="accordion-body">{{programmieren}}</div>
-							<table class="table table-hover table-striped">
-								<thead class="thead-dark">
-									<th scope="col">Titel</th>
-									<th scope="col">Fälligkeit</th>
-									<th scope="col">Notizen</th>
-									<th scope="col">Priorität</th>
-								</thead>
-								{% for eintrag in programmieren_list %}
-								<tr>
-									<td>{{ eintrag[0]}}</td>
-									<td>{{ eintrag[1]}}</td>
-									<td>{{ eintrag[2]}}</td>
-									<td>{{ eintrag[3]}}</td>
-								</tr>
-								{% endfor %}
-						  	</table>
+				  		<div class="accordion-body">{{programmieren}}
+							<form class="formueberblick" method="POST" action="{{url_for('ueberblick')}}">
+								<table class="table table-hover table-striped">
+									<thead class="thead-dark">
+										<th scope="col">Erledigt?</th>
+										<th scope="col">Titel</th>
+										<th scope="col">Fälligkeit</th>
+										<th scope="col">Notizen</th>
+										<th scope="col">Priorität</th>
+									</thead>
+									{% for eintrag in programmieren_list %}
+									<tr>
+										<td>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault5" value="Nein" checked>
+												<label class="form-check-label" for="flexRadioDefault1">nein</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault6" value="Ja">
+												<label class="form-check-label" for="flexRadioDefault2">ja</label>
+											</div>
+										</td>
+										<td>{{ eintrag[1]}}</td>
+										<td>{{ eintrag[2]}}</td>
+										<td>{{ eintrag[3]}}</td>
+										<td>{{ eintrag[4]}}</td>
+									</tr>
+									{% endfor %}
+								</table>
+							<button class="btn btn-primary" type="submit">Speichern</button>
+							</form>
+						</div>
 					</div>
 			  	</div>
 				<div class="accordion-item">
@@ -177,22 +268,36 @@
 					<div class="accodion-anzahl">Anzahl Einträge: {{anzahlprojekt}}</div>
 					<div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
 				  		<div class="accordion-body">{{projektmanagement}}
-							<table class="table table-hover table-striped">
-								<thead class="thead-dark">
-									<th scope="col">Titel</th>
-									<th scope="col">Fälligkeit</th>
-									<th scope="col">Notizen</th>
-									<th scope="col">Priorität</th>
-								</thead>
-								{% for eintrag in projektmanagement_list %}
-								<tr>
-									<td>{{ eintrag[0]}}</td>
-									<td>{{ eintrag[1]}}</td>
-									<td>{{ eintrag[2]}}</td>
-									<td>{{ eintrag[3]}}</td>
-								</tr>
-								{% endfor %}
-						  	</table>
+							<form class="formueberblick" method="POST" action="{{url_for('ueberblick')}}">
+								<table class="table table-hover table-striped">
+									<thead class="thead-dark">
+										<th scope="col">Erledigt?</th>
+										<th scope="col">Titel</th>
+										<th scope="col">Fälligkeit</th>
+										<th scope="col">Notizen</th>
+										<th scope="col">Priorität</th>
+									</thead>
+									{% for eintrag in projektmanagement_list %}
+									<tr>
+										<td>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault5" value="Nein" checked>
+												<label class="form-check-label" for="flexRadioDefault1">nein</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault6" value="Ja">
+												<label class="form-check-label" for="flexRadioDefault2">ja</label>
+											</div>
+										</td>
+										<td>{{ eintrag[1]}}</td>
+										<td>{{ eintrag[2]}}</td>
+										<td>{{ eintrag[3]}}</td>
+										<td>{{ eintrag[4]}}</td>
+									</tr>
+									{% endfor %}
+								</table>
+							<button class="btn btn-primary" type="submit">Speichern</button>
+							</form>
 						</div>
 					</div>
 			  	</div>
@@ -204,23 +309,38 @@
 					</h2>
 					<div class="accodion-anzahl">Anzahl Einträge: {{anzahlreque}}</div>
 					<div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
-				  		<div class="accordion-body">{{requirements}}</div>
-							<table class="table table-hover table-striped">
-								<thead class="thead-dark">
-									<th scope="col">Titel</th>
-									<th scope="col">Fälligkeit</th>
-									<th scope="col">Notizen</th>
-									<th scope="col">Priorität</th>
-								</thead>
-								{% for eintrag in requirements_list %}
-								<tr>
-									<td>{{ eintrag[0]}}</td>
-									<td>{{ eintrag[1]}}</td>
-									<td>{{ eintrag[2]}}</td>
-									<td>{{ eintrag[3]}}</td>
-								</tr>
-								{% endfor %}
-						  	</table>
+				  		<div class="accordion-body">{{requirements}}
+							<form class="formueberblick" method="POST" action="{{url_for('ueberblick')}}">
+								<table class="table table-hover table-striped">
+									<thead class="thead-dark">
+										<th scope="col">Erledigt?</th>
+										<th scope="col">Titel</th>
+										<th scope="col">Fälligkeit</th>
+										<th scope="col">Notizen</th>
+										<th scope="col">Priorität</th>
+									</thead>
+									{% for eintrag in requirements_list %}
+									<tr>
+										<td>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault5" value="Nein" checked>
+												<label class="form-check-label" for="flexRadioDefault1">nein</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault6" value="Ja">
+												<label class="form-check-label" for="flexRadioDefault2">ja</label>
+											</div>
+										</td>
+										<td>{{ eintrag[1]}}</td>
+										<td>{{ eintrag[2]}}</td>
+										<td>{{ eintrag[3]}}</td>
+										<td>{{ eintrag[4]}}</td>
+									</tr>
+									{% endfor %}
+								</table>
+							<button class="btn btn-primary" type="submit">Speichern</button>
+							</form>
+						</div>
 					</div>
 			  	</div>
 			</div>

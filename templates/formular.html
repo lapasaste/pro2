@@ -4,7 +4,7 @@
 <body>
     <div id="main" class="container">
         <button type="button" class="btn btn-light formerfolgreich">{{erfolgreich}}</button>
-        <form method="POST" action="{{url_for('erfassen')}}">
+        <form class="formerfassen" method="POST" action="{{url_for('erfassen')}}">
         <div class="form-modul mb-3">
             <label class="form-label">Bitte wähle das Modul aus</label>
             <select class="form-control" name="modul">
@@ -50,6 +50,17 @@
 
         <div class="form-time mb-3">
             <label class="form-label">Fälligkeitsdatum *</label> <input type="date" class="form-control form-control-sm" name="date" value="">
+        </div>
+        <div class="form-priority mb-3" style="display: none;">
+            <label class="form-label">Erledigt</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault5" value="Nein" checked>
+                <label class="form-check-label" for="flexRadioDefault1">nein</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault6" value="Ja">
+                <label class="form-check-label" for="flexRadioDefault2">ja</label>
+            </div>
         </div>
         <small class="form-text">Felder markiert mit * sind Pflichtfelder.</small> <br>
 

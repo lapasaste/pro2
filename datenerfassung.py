@@ -5,7 +5,9 @@ homework_dict = {"Modul": ["modul"],
     "Titel der Hausaufgabe": ["text_homework"],
     "Notizen": ["textarea_notice"],
     "Priorität": ["flexRadioDefault"],
-    "Fälligkeitsdatum": ["date"]
+    "Fälligkeitsdatum": ["date"],
+    "Erledigt": ["flexRadioDefault1"]
+
 }
 print(homework_dict)
 

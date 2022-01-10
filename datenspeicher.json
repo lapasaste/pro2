@@ -1,86 +1,18 @@
 [
     {
-        "modul":"Content Marketing",
-        "titelHausaufgabe":"Neue Hausaufgabe CM",
-        "faelligkeitdatum":"2022-01-14",
-        "prioritaet":"Hoch",
-        "notizen":"Neue Sortierung"
+        "modul":"Digital Marketing",
+        "titelHausaufgabe":"Test",
+        "faelligkeitdatum":"2022-01-25",
+        "prioritaet":"Mittel",
+        "notizen":"Test Notiz",
+        "erledigt":"Nein"
     },
     {
         "modul":"Content Marketing",
         "titelHausaufgabe":"Pr\u00e4sentation finalisieren",
-        "faelligkeitdatum":"2022-01-21",
-        "prioritaet":"Mittel",
-        "notizen":"In Zusammenarbeit mit Kollegen"
-    },
-    {
-        "modul":"Requirement Engineering",
-        "titelHausaufgabe":"Leistungsnachweis 3",
-        "faelligkeitdatum":"2022-01-28",
-        "prioritaet":"Dringend",
-        "notizen":"Leistungsnachweis 3 erstellen und im Moodle hochladen."
-    },
-    {
-        "modul":"Requirement Engineering",
-        "titelHausaufgabe":"Leistungsnachweis 3",
-        "faelligkeitdatum":"2022-01-28",
-        "prioritaet":"Dringend",
-        "notizen":"Leistungsnachweis 3 erstellen und im Moodle hochladen."
-    },
-    {
-        "modul":"Innovationsmanagement",
-        "titelHausaufgabe":"Pr\u00e4sentation Design erstellen",
-        "faelligkeitdatum":"2022-01-27",
-        "prioritaet":"Mittel",
-        "notizen":"F\u00fcr die Pr\u00e4sentation die Pr\u00e4si vorbereiten."
-    },
-    {
-        "modul":"Innovationsmanagement",
-        "titelHausaufgabe":"Pr\u00e4sentation Design erstellen",
-        "faelligkeitdatum":"2022-01-27",
-        "prioritaet":"Mittel",
-        "notizen":"F\u00fcr die Pr\u00e4sentation die Pr\u00e4si vorbereiten."
-    },
-    {
-        "modul":"Programmierung 2",
-        "titelHausaufgabe":"README erstellen",
-        "faelligkeitdatum":"2022-01-28",
-        "prioritaet":"Hoch",
-        "notizen":"Dokumentation / Anleitung\r\nInstallierte Tools\r\nFlowmap\r\nKommentare\r\n"
-    },
-    {
-        "modul":"Programmierung 2",
-        "titelHausaufgabe":"README erstellen",
-        "faelligkeitdatum":"2022-01-28",
-        "prioritaet":"Hoch",
-        "notizen":"Dokumentation / Anleitung\r\nInstallierte Tools\r\nFlowmap\r\nKommentare\r\n"
-    },
-    {
-        "modul":"Programmierung 2",
-        "titelHausaufgabe":"README erstellen",
-        "faelligkeitdatum":"2022-01-28",
-        "prioritaet":"Hoch",
-        "notizen":"Dokumentation / Anleitung\r\nInstallierte Tools\r\nFlowmap\r\nKommentare\r\n"
-    },
-    {
-        "modul":"Programmierung 2",
-        "titelHausaufgabe":"README erstellen",
-        "faelligkeitdatum":"2022-01-28",
-        "prioritaet":"Hoch",
-        "notizen":"Dokumentation / Anleitung\r\nInstallierte Tools\r\nFlowmap\r\nKommentare\r\n"
-    },
-    {
-        "modul":"Projektmanagement 1",
-        "titelHausaufgabe":"Neuer USE CASE definieren",
-        "faelligkeitdatum":"2022-02-03",
-        "prioritaet":"Leicht",
-        "notizen":"Definition ist final."
-    },
-    {
-        "modul":"Nachhaltige Entwicklung",
-        "titelHausaufgabe":"Arbeit finalisieren",
         "faelligkeitdatum":"2022-01-20",
         "prioritaet":"Mittel",
-        "notizen":"Die Arbeit \u00fcber Amerika finalisieren. Mit Kollege Termin f\u00fcr Abgabe vereinbaren. "
+        "notizen":"inkl. Fragerunde",
+        "erledigt":"Nein"
     }
 ]
