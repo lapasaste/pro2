@@ -14,5 +14,21 @@
         "prioritaet":"Mittel",
         "notizen":"inkl. Fragerunde",
         "erledigt":"Nein"
+    },
+    {
+        "modul":"Nachhaltige Entwicklung",
+        "titelHausaufgabe":"Arbeit abgeben",
+        "faelligkeitdatum":"2022-01-26",
+        "prioritaet":"Hoch",
+        "notizen":"inkl. Pr\u00e4si",
+        "erledigt":"Nein"
+    },
+    {
+        "modul":"Content Marketing",
+        "titelHausaufgabe":"Neue Hausaufgabe CM",
+        "faelligkeitdatum":"2022-01-28",
+        "prioritaet":"Mittel",
+        "notizen":"Literatur lesen",
+        "erledigt":"Nein"
     }
 ]

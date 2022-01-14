@@ -14,6 +14,7 @@
 					</h2>
 
 					<div class="accodion-anzahl">Anzahl Einträge: {{anzahlcontent}}</div>
+					<div class="accodion-prozent">%-Anteil von Gesamtaufgaben: {{Anzcon}}%</div>
 					<div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
 						<div class="accordion-body">{{contentmarketing}}
 							<form class="formueberblick" method="POST" action="{{url_for('ueberblick')}}">
@@ -29,11 +30,11 @@
 									<tr>
 										<td>
 											<div class="form-check">
-												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault5" value="Nein" checked>
+												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault8" value="Nein" checked>
 												<label class="form-check-label" for="flexRadioDefault1">nein</label>
 											</div>
 											<div class="form-check">
-												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault6" value="Ja">
+												<input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault9" value="Ja">
 												<label class="form-check-label" for="flexRadioDefault2">ja</label>
 											</div>
 										</td>
@@ -56,6 +57,7 @@
 						</button>
 					</h2>
 					<div class="accodion-anzahl">Anzahl Einträge: {{anzahldigital}}</div>
+					<div class="accodion-prozent">%-Anteil von Gesamtaufgaben: {{Anzdigma}}%</div>
 					<div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
 				  		<div class="accordion-body">{{digitalmarketing}}
 							<form class="formueberblick" method="POST" action="{{url_for('ueberblick')}}">
@@ -98,6 +100,7 @@
 				  		</button>
 					</h2>
 					<div class="accodion-anzahl">Anzahl Einträge: {{anzahlinno}}</div>
+					<div class="accodion-prozent">%-Anteil von Gesamtaufgaben: {{Anzinno}}%</div>
 					<div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
 				  		<div class="accordion-body">{{innovationsmanagement}}
 							<form class="formueberblick" method="POST" action="{{url_for('ueberblick')}}">
@@ -140,6 +143,7 @@
 				  		</button>
 					</h2>
 					<div class="accodion-anzahl">Anzahl Einträge: {{anzahlnachhaltig}}</div>
+					<div class="accodion-prozent">%-Anteil von Gesamtaufgaben: {{Anznachhaltig}}%</div>
 					<div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
 				  		<div class="accordion-body">{{nachhaltigeentwicklung}}
 							<form class="formueberblick" method="POST" action="{{url_for('ueberblick')}}">
@@ -182,6 +186,7 @@
 				  		</button>
 					</h2>
 					<div class="accodion-anzahl">Anzahl Einträge: {{anzahlproduct}}</div>
+					<div class="accodion-prozent">%-Anteil von Gesamtaufgaben: {{Anzproduct}}%</div>
 					<div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
 				  		<div class="accordion-body">{{productmanagement}}
 							<form class="formueberblick" method="POST" action="{{url_for('ueberblick')}}">
@@ -224,6 +229,7 @@
 				  		</button>
 					</h2>
 					<div class="accodion-anzahl">Anzahl Einträge: {{anzahlprog}}</div>
+					<div class="accodion-prozent">%-Anteil von Gesamtaufgaben: {{Anzprog}}%</div>
 					<div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
 				  		<div class="accordion-body">{{programmieren}}
 							<form class="formueberblick" method="POST" action="{{url_for('ueberblick')}}">
@@ -266,6 +272,7 @@
 				  		</button>
 					</h2>
 					<div class="accodion-anzahl">Anzahl Einträge: {{anzahlprojekt}}</div>
+					<div class="accodion-prozent">%-Anteil von Gesamtaufgaben: {{Anzprojekt}}%</div>
 					<div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
 				  		<div class="accordion-body">{{projektmanagement}}
 							<form class="formueberblick" method="POST" action="{{url_for('ueberblick')}}">
@@ -308,6 +315,7 @@
 				  		</button>
 					</h2>
 					<div class="accodion-anzahl">Anzahl Einträge: {{anzahlreque}}</div>
+					<div class="accodion-prozent">%-Anteil von Gesamtaufgaben: {{Anzreque}}%</div>
 					<div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
 				  		<div class="accordion-body">{{requirements}}
 							<form class="formueberblick" method="POST" action="{{url_for('ueberblick')}}">

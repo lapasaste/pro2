@@ -1,5 +1,6 @@
 from flask import Flask, request
 from flask import render_template
+from datetime import datetime
 import json
 
 app = Flask("Hello You")
@@ -80,20 +81,46 @@ def ueberblick():
     Zprojekt = len(projektmanagement_list)
     Zreque = len(requirements_list)
 
+    #Berechnung von Anteil der Module im Verhältniss zu allen fälligen Hausaufgaben
+    anzahlinsgesamt = len(datenspeicher_list)
+    Anzcon = 100/anzahlinsgesamt*Zcon
+    Anzcon = int(Anzcon)
+    Anzdigma = 100 / anzahlinsgesamt * Zdigma
+    Anzdigma = int(Anzdigma)
+    Anzinno = 100 / anzahlinsgesamt * Zinno
+    Anzinno = int(Anzinno)
+    Anznachhaltig = 100 / anzahlinsgesamt * Znachhaltig
+    Anznachhaltig = int(Anznachhaltig)
+    Anzproduct = 100 / anzahlinsgesamt * Zproduct
+    Anzproduct = int(Anzproduct)
+    Anzprog = 100 / anzahlinsgesamt * Zprog
+    Anzprog = int(Anzprog)
+    Anzprojekt = 100 / anzahlinsgesamt * Zprojekt
+    Anzprojekt = int(Anzprojekt)
+    Anzreque = 100 / anzahlinsgesamt * Zreque
+    Anzreque = int(Anzreque)
+
+   # Procon = 100/anzahlinsgesamt*Zcon
+
     # Datenabfrage vom Formular und abspeichern im JSON-FIle
     # Nach einer Abfrage funktioniert es nicht mehr, da ich die Liste nicht udpate, sondern erfasse...
     if request.method == 'POST':
+        modul = request.form.get("modul")
+        titletext = request.form.get("text_homework")
+        notizen = request.form.get("textarea_notice")
+        prioritaet = request.form.get("flexRadioDefault")
+        faelligkeit = request.form.get("date")
         erledigt = request.form.get("flexRadioDefault1")
 
-        datenspeicher_list.append({"erledigt": erledigt})
+        datenspeicher_list.append({"modul": modul, "titelHausaufgabe": titletext, "faelligkeitdatum": faelligkeit, "prioritaet": prioritaet, "notizen": notizen, "erledigt": erledigt})
         with open("datenspeicher.json", "w") as datenbank_hausaufgaben:
             json.dump(datenspeicher_list, datenbank_hausaufgaben, indent=4, separators=(",", ":"))
 
-        return render_template("ueberblick.html", anzahlcontent=Zcon, anzahldigital=Zdigma, anzahlinno=Zinno, anzahlnachhaltig=Znachhaltig, anzahlproduct=Zproduct, anzahlprog=Zprog, anzahlprojekt=Zprojekt, anzahlreque=Zreque, contentmarketing_list=contentmarketing_list, digitalmarketing_list=digitalmarketing_list, innovationsmanagement_list=innovationsmanagement_list, nachhaltige_list=nachhaltige_list, productmanagemen_list=productmanagement_list, programmieren_list=programmieren_list, projektmanagement_list=projektmanagement_list, requirements_list=requirements_list, erfolgreich="Die Hausaufgabe wurde erledigt")
+        return render_template("ueberblick.html", anzahlcontent=Zcon, anzahldigital=Zdigma, anzahlinno=Zinno, anzahlnachhaltig=Znachhaltig, anzahlproduct=Zproduct, anzahlprog=Zprog, anzahlprojekt=Zprojekt, anzahlreque=Zreque, contentmarketing_list=contentmarketing_list, digitalmarketing_list=digitalmarketing_list, innovationsmanagement_list=innovationsmanagement_list, nachhaltige_list=nachhaltige_list, productmanagemen_list=productmanagement_list, programmieren_list=programmieren_list, projektmanagement_list=projektmanagement_list, requirements_list=requirements_list, Anzcon=Anzcon,Anzdigma=Anzdigma,Anzinno=Anzinno, Anznachhaltig=Anznachhaltig, Anzproduct=Anzproduct, Anzprog=Anzprog, Anzprojekt=Anzprojekt, Anzreque=Anzreque, erfolgreich="Die Hausaufgabe wurde erledigt")
 
     else:
         # Datenabfrage vom Formular und abspeichern im JSON-FIle
-        return render_template("ueberblick.html", anzahlcontent=Zcon, anzahldigital=Zdigma, anzahlinno=Zinno, anzahlnachhaltig=Znachhaltig, anzahlproduct=Zproduct, anzahlprog=Zprog, anzahlprojekt=Zprojekt, anzahlreque=Zreque, contentmarketing_list=contentmarketing_list, digitalmarketing_list=digitalmarketing_list, innovationsmanagement_list=innovationsmanagement_list, nachhaltige_list=nachhaltige_list, productmanagemen_list=productmanagement_list, programmieren_list=programmieren_list, projektmanagement_list=projektmanagement_list, requirements_list=requirements_list)
+        return render_template("ueberblick.html", anzahlcontent=Zcon, anzahldigital=Zdigma, anzahlinno=Zinno, anzahlnachhaltig=Znachhaltig, anzahlproduct=Zproduct, anzahlprog=Zprog, anzahlprojekt=Zprojekt, anzahlreque=Zreque, contentmarketing_list=contentmarketing_list, digitalmarketing_list=digitalmarketing_list, innovationsmanagement_list=innovationsmanagement_list, nachhaltige_list=nachhaltige_list, productmanagemen_list=productmanagement_list, programmieren_list=programmieren_list, projektmanagement_list=projektmanagement_list, requirements_list=requirements_list, Anzcon=Anzcon,Anzdigma=Anzdigma,Anzinno=Anzinno, Anznachhaltig=Anznachhaltig, Anzproduct=Anzproduct, Anzprog=Anzprog, Anzprojekt=Anzprojekt, Anzreque=Anzreque)
 
 
 

@@ -88,7 +88,16 @@ button a {
 .accodion-anzahl {
     position: absolute;
     z-index: 4;
-    right: 250px;
+    right: 400px;
+    font-size: 12px;
+    font-style: italic;
+    top: 18px;
+}
+
+.accodion-prozent {
+    position: absolute;
+    z-index: 4;
+    right: 80px;
     font-size: 12px;
     font-style: italic;
     top: 18px;
