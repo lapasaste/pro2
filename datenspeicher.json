@@ -1,34 +1,10 @@
 [
     {
-        "modul":"Digital Marketing",
-        "titelHausaufgabe":"Test",
-        "faelligkeitdatum":"2022-01-25",
-        "prioritaet":"Mittel",
-        "notizen":"Test Notiz",
-        "erledigt":"Nein"
-    },
-    {
-        "modul":"Content Marketing",
-        "titelHausaufgabe":"Pr\u00e4sentation finalisieren",
-        "faelligkeitdatum":"2022-01-20",
-        "prioritaet":"Mittel",
-        "notizen":"inkl. Fragerunde",
-        "erledigt":"Nein"
-    },
-    {
         "modul":"Nachhaltige Entwicklung",
-        "titelHausaufgabe":"Arbeit abgeben",
-        "faelligkeitdatum":"2022-01-26",
-        "prioritaet":"Hoch",
-        "notizen":"inkl. Pr\u00e4si",
-        "erledigt":"Nein"
-    },
-    {
-        "modul":"Content Marketing",
-        "titelHausaufgabe":"Neue Hausaufgabe CM",
+        "titelHausaufgabe":"fsjsdflkjhk",
         "faelligkeitdatum":"2022-01-28",
         "prioritaet":"Mittel",
-        "notizen":"Literatur lesen",
+        "notizen":"jhkh",
         "erledigt":"Nein"
     }
 ]

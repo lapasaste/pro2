@@ -27,6 +27,15 @@ def ueberblick():
     d = open("datenspeicher.json")
     datenspeicher_list = json.load(d)
 
+    # Datenabfrage vom Formular und abspeichern im JSON-FIle
+    # Nach einer Abfrage funktioniert es nicht mehr, da ich die Liste nicht udpate, sondern erfasse...
+    if request.method == 'POST':
+        for eintrag in datenspeicher_list:
+            if request.form.get("Ja") == eintrag["titelHausaufgabe"]:
+                datenspeicher_list.remove(eintrag)
+        with open("datenspeicher.json", "w") as datenbank_hausaufgaben:
+            json.dump(datenspeicher_list, datenbank_hausaufgaben, indent=4, separators=(",", ":"))
+
     #Mit Jinja stylen
     #Daten nach Modul aus JSON ziehen und weiter für HTML geben
     contentmarketing_list = []
@@ -41,7 +50,8 @@ def ueberblick():
     #Herausziehen der Daten von datenspeicher_liste in neue Liste für jeweilige Module
     for eintrag in datenspeicher_list:
         if eintrag["modul"] == "Content Marketing":
-            contentmarketing_list.append((eintrag["erledigt"], eintrag["titelHausaufgabe"], eintrag["faelligkeitdatum"], eintrag["notizen"], eintrag["prioritaet"]))
+            if eintrag["erledigt"] == "Nein":
+                contentmarketing_list.append((eintrag["erledigt"], eintrag["titelHausaufgabe"], eintrag["faelligkeitdatum"], eintrag["notizen"], eintrag["prioritaet"]))
 
         elif eintrag["modul"] == "Digital Marketing":
             digitalmarketing_list.append((eintrag["erledigt"], eintrag["titelHausaufgabe"], eintrag["faelligkeitdatum"], eintrag["notizen"], eintrag["prioritaet"]))
@@ -83,46 +93,40 @@ def ueberblick():
 
     #Berechnung von Anteil der Module im Verhältniss zu allen fälligen Hausaufgaben
     anzahlinsgesamt = len(datenspeicher_list)
-    Anzcon = 100/anzahlinsgesamt*Zcon
-    Anzcon = int(Anzcon)
-    Anzdigma = 100 / anzahlinsgesamt * Zdigma
-    Anzdigma = int(Anzdigma)
-    Anzinno = 100 / anzahlinsgesamt * Zinno
-    Anzinno = int(Anzinno)
-    Anznachhaltig = 100 / anzahlinsgesamt * Znachhaltig
-    Anznachhaltig = int(Anznachhaltig)
-    Anzproduct = 100 / anzahlinsgesamt * Zproduct
-    Anzproduct = int(Anzproduct)
-    Anzprog = 100 / anzahlinsgesamt * Zprog
-    Anzprog = int(Anzprog)
-    Anzprojekt = 100 / anzahlinsgesamt * Zprojekt
-    Anzprojekt = int(Anzprojekt)
-    Anzreque = 100 / anzahlinsgesamt * Zreque
-    Anzreque = int(Anzreque)
+    if anzahlinsgesamt > 0:
+        Anzcon = 100/anzahlinsgesamt*Zcon
+        Anzcon = int(Anzcon)
+        Anzdigma = 100 / anzahlinsgesamt * Zdigma
+        Anzdigma = int(Anzdigma)
+        Anzinno = 100 / anzahlinsgesamt * Zinno
+        Anzinno = int(Anzinno)
+        Anznachhaltig = 100 / anzahlinsgesamt * Znachhaltig
+        Anznachhaltig = int(Anznachhaltig)
+        Anzproduct = 100 / anzahlinsgesamt * Zproduct
+        Anzproduct = int(Anzproduct)
+        Anzprog = 100 / anzahlinsgesamt * Zprog
+        Anzprog = int(Anzprog)
+        Anzprojekt = 100 / anzahlinsgesamt * Zprojekt
+        Anzprojekt = int(Anzprojekt)
+        Anzreque = 100 / anzahlinsgesamt * Zreque
+        Anzreque = int(Anzreque)
+
+    else:
+        Anzcon = 0
+        Anzdigma = 0
+        Anzinno = 0
+        Anznachhaltig = 0
+        Anzproduct = 0
+        Anzprog = 0
+        Anzprojekt = 0
+        Anzreque = 0
 
    # Procon = 100/anzahlinsgesamt*Zcon
 
-    # Datenabfrage vom Formular und abspeichern im JSON-FIle
-    # Nach einer Abfrage funktioniert es nicht mehr, da ich die Liste nicht udpate, sondern erfasse...
-    if request.method == 'POST':
-        modul = request.form.get("modul")
-        titletext = request.form.get("text_homework")
-        notizen = request.form.get("textarea_notice")
-        prioritaet = request.form.get("flexRadioDefault")
-        faelligkeit = request.form.get("date")
-        erledigt = request.form.get("flexRadioDefault1")
+    with open("datenspeicher.json", "w") as datenbank_hausaufgaben:
+        json.dump(datenspeicher_list, datenbank_hausaufgaben, indent=4, separators=(",", ":"))
 
-        datenspeicher_list.append({"modul": modul, "titelHausaufgabe": titletext, "faelligkeitdatum": faelligkeit, "prioritaet": prioritaet, "notizen": notizen, "erledigt": erledigt})
-        with open("datenspeicher.json", "w") as datenbank_hausaufgaben:
-            json.dump(datenspeicher_list, datenbank_hausaufgaben, indent=4, separators=(",", ":"))
-
-        return render_template("ueberblick.html", anzahlcontent=Zcon, anzahldigital=Zdigma, anzahlinno=Zinno, anzahlnachhaltig=Znachhaltig, anzahlproduct=Zproduct, anzahlprog=Zprog, anzahlprojekt=Zprojekt, anzahlreque=Zreque, contentmarketing_list=contentmarketing_list, digitalmarketing_list=digitalmarketing_list, innovationsmanagement_list=innovationsmanagement_list, nachhaltige_list=nachhaltige_list, productmanagemen_list=productmanagement_list, programmieren_list=programmieren_list, projektmanagement_list=projektmanagement_list, requirements_list=requirements_list, Anzcon=Anzcon,Anzdigma=Anzdigma,Anzinno=Anzinno, Anznachhaltig=Anznachhaltig, Anzproduct=Anzproduct, Anzprog=Anzprog, Anzprojekt=Anzprojekt, Anzreque=Anzreque, erfolgreich="Die Hausaufgabe wurde erledigt")
-
-    else:
-        # Datenabfrage vom Formular und abspeichern im JSON-FIle
-        return render_template("ueberblick.html", anzahlcontent=Zcon, anzahldigital=Zdigma, anzahlinno=Zinno, anzahlnachhaltig=Znachhaltig, anzahlproduct=Zproduct, anzahlprog=Zprog, anzahlprojekt=Zprojekt, anzahlreque=Zreque, contentmarketing_list=contentmarketing_list, digitalmarketing_list=digitalmarketing_list, innovationsmanagement_list=innovationsmanagement_list, nachhaltige_list=nachhaltige_list, productmanagemen_list=productmanagement_list, programmieren_list=programmieren_list, projektmanagement_list=projektmanagement_list, requirements_list=requirements_list, Anzcon=Anzcon,Anzdigma=Anzdigma,Anzinno=Anzinno, Anznachhaltig=Anznachhaltig, Anzproduct=Anzproduct, Anzprog=Anzprog, Anzprojekt=Anzprojekt, Anzreque=Anzreque)
-
-
+    return render_template("ueberblick.html", anzahlcontent=Zcon, anzahldigital=Zdigma, anzahlinno=Zinno, anzahlnachhaltig=Znachhaltig, anzahlproduct=Zproduct, anzahlprog=Zprog, anzahlprojekt=Zprojekt, anzahlreque=Zreque, contentmarketing_list=contentmarketing_list, digitalmarketing_list=digitalmarketing_list, innovationsmanagement_list=innovationsmanagement_list, nachhaltige_list=nachhaltige_list, productmanagemen_list=productmanagement_list, programmieren_list=programmieren_list, projektmanagement_list=projektmanagement_list, requirements_list=requirements_list, Anzcon=Anzcon,Anzdigma=Anzdigma,Anzinno=Anzinno, Anznachhaltig=Anznachhaltig, Anzproduct=Anzproduct, Anzprog=Anzprog, Anzprojekt=Anzprojekt, Anzreque=Anzreque)
 
 
 
