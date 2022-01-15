@@ -1,4 +1,4 @@
-#Hausaufgabenerfasser
+# Hausaufgabenerfasser
 
 ## 1. Ausgangslage
 Aktuell habe ich keinen Überblick über meine Hausaufgaben und kann nicht abschätzen, welche Aufgabe welche Priorität hat. 
@@ -16,22 +16,22 @@ Damit die Applikation korrekt funktioniert, müssen folgende Module importiert w
     <li>Datetime</li>
 </ul>
 
-###Home
+### Home
 Durch das Anwählen der jeweiligen Buttons gelangt der User auf die Seiten "Überblick" und "Erfassen"<br>
 Zudem werden auf der Startseite die drei neusten Einträge angezeigt.
 
-###Erfassen
+### Erfassen
 Auf der Seite werden die Hausaufgaben erfasst. Die Module sind vorgegeben und können durch ein Drop-Down-Element ausgewählt werden.<br><br>
 Der Titel, sowie die Notizen können manuell eingegeben werden.<br><br>
 Das Fälligkeitsdatum wird mit dem input type "date" angezeigt und das Datum kann durch den "Assistenten" ausgewählt werden. <br><br>
 Durch Klick auf "Speichern" werden die Daten im Hintergrund in eine Liste als Dictionary ins JSON-File "datenspeicher.json" gespeichert. Für den User erscheint die Meldung, dass die Hausaufgabe erfasst wurde.
 
-###Überblick
+### Überblick
 Auf der Überblick-Seite werden alle Hausaufgaben nach Modul in einem Akkordeon aufgelistet, welche noch nicht erledigt wurden. Zudem werden auf der Übersicht-Seite die Anzahl Einträge in diesem spezifischen Moudl und die %-Anzahl von den Gesamthausaufgaben angezeigt. Durch Klick auf den Modul-Titel, werden die Hausaufgaben von diesem Modul in einer Tabelle aufgelistet.<br><br>
-####Priorität
+#### Priorität
 Ist die Aufgabe in max. 3 Tagen fällig, wird die Priorität "Dringend" vergeben.<br> Wenn sie in max. 6 Tagen fällig ist, wird die Priorität "Hoch" vergeben.<br> Bei max. 9 Tage die Priorität "Mittel". <br>Alle anderen haben die Priorität "Klein".
 
-####Hausaufgabe abgeschlossen
+#### Hausaufgabe abgeschlossen
 Sobald eine Hausaufgabe erledigt wurde, kann sie in der Übersichtsliste entfernt werden.<br>
 Dies kann erledigt werden, indem der User in der Spalte "Erledigt?" in der Tabelle den Radio-Button auf "Ja" setzt und den Eintrag speichert.<br>
 Danach wird der ganze Datensatz im JSON und somit auch von der Liste entfernt.

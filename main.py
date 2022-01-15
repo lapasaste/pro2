@@ -61,8 +61,9 @@ def ueberblick():
         a = datetime.strptime(eintrag["faelligkeitdatum"], date_format)
         b = datetime.strptime(today, date_format)
         delta = (b - a) * -1
-        print(delta.days)
-        if delta.days <= 3:
+        if delta.days <= 0:
+            eintrag["prioritaet"] = "Fälligkeit ist vorbei!"
+        elif delta.days <= 3:
             eintrag["prioritaet"] = "Dringend"
         elif delta.days <= 6:
             eintrag["prioritaet"] = "Hoch"
