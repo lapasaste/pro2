@@ -1,5 +1,6 @@
 from flask import Flask, request
 from flask import render_template
+from datetime import date
 from datetime import datetime
 import json
 
@@ -7,15 +8,17 @@ app = Flask("Hello You")
 
 @app.route('/')
 def hello():
+    #Daten von JSON in datenspeicher_list eintragen
     d = open("datenspeicher.json")
     datenspeicher_list = json.load(d)
 
-    # Anzeigen der drei neusten Einträge auf Home
+    #Die neusten drei erfassten Hausaufgaben werden auf Home angezeigt, indem nach dem Erfassungsdatum sortiert wird.
     datum_list = []
     for date in datenspeicher_list:
         datum_list.append((date["faelligkeitdatum"], date["modul"], date["titelHausaufgabe"]))
 
-    # Quelle: https://docs.python.org/3/howto/sorting.html
+    #Sortierung der Datensätze
+    #Quelle: https://docs.python.org/3/howto/sorting.html
     datum_list = sorted(datum_list, key=lambda x: x[0], reverse=True)
     datum_list = datum_list[:3]
 
@@ -24,11 +27,12 @@ def hello():
 
 @app.route('/ueberblick', methods=['GET', 'POST'])
 def ueberblick():
+    # Daten von JSON in datenspeicher_list eintragen
     d = open("datenspeicher.json")
     datenspeicher_list = json.load(d)
 
-    # Datenabfrage vom Formular und abspeichern im JSON-FIle
-    # Nach einer Abfrage funktioniert es nicht mehr, da ich die Liste nicht udpate, sondern erfasse...
+    #Datenabfrage vom Formular und Datensatz löschen, sobald der Wert "Ja" angewählt wird
+    #Der Name "Ja" wird vom Formular auf der Seite Ueberblick mit dem Wert/Value "titelHausaufgabe" von der Seite Ueberblick abgeglichen. Sobald dieser übereinstimmt, wird der Eintrag im JSON gelöscht.
     if request.method == 'POST':
         for eintrag in datenspeicher_list:
             if request.form.get("Ja") == eintrag["titelHausaufgabe"]:
@@ -36,8 +40,7 @@ def ueberblick():
         with open("datenspeicher.json", "w") as datenbank_hausaufgaben:
             json.dump(datenspeicher_list, datenbank_hausaufgaben, indent=4, separators=(",", ":"))
 
-    #Mit Jinja stylen
-    #Daten nach Modul aus JSON ziehen und weiter für HTML geben
+    #Eigene Listen für jedes Modul, damit Einträge nach Modul von JSON ausgezogen werden können
     contentmarketing_list = []
     digitalmarketing_list = []
     innovationsmanagement_list = []
@@ -47,11 +50,34 @@ def ueberblick():
     projektmanagement_list = []
     requirements_list = []
 
+
+    #Priorität berechnen anhand der Anzahl Tage, welche vom Fälligkeitsdatum bis zum heutigen Datum sind.
+    #Wenn die Fälligkeit einer Aufgabe <= 3 Tage ist, wird die Priorität Dringend vergeben etc.
+    #Hilfe: https://stackoverflow.com/questions/151199/how-to-calculate-number-of-days-between-two-given-dates
+    today = datetime.now()
+    for eintrag in datenspeicher_list:
+        today = str(date.today())
+        date_format = "%Y-%m-%d"
+        a = datetime.strptime(eintrag["faelligkeitdatum"], date_format)
+        b = datetime.strptime(today, date_format)
+        delta = (b - a) * -1
+        print(delta.days)
+        if delta.days <= 3:
+            eintrag["prioritaet"] = "Dringend"
+        elif delta.days <= 6:
+            eintrag["prioritaet"] = "Hoch"
+        elif delta.days <= 9:
+            eintrag["prioritaet"] = "Mittel"
+        else:
+            eintrag["prioritaet"] = "Klein"
+
+        with open("datenspeicher.json", "w") as datenbank_hausaufgaben:
+            json.dump(datenspeicher_list, datenbank_hausaufgaben, indent=4, separators=(",", ":"))
+
     #Herausziehen der Daten von datenspeicher_liste in neue Liste für jeweilige Module
     for eintrag in datenspeicher_list:
         if eintrag["modul"] == "Content Marketing":
-            if eintrag["erledigt"] == "Nein":
-                contentmarketing_list.append((eintrag["erledigt"], eintrag["titelHausaufgabe"], eintrag["faelligkeitdatum"], eintrag["notizen"], eintrag["prioritaet"]))
+            contentmarketing_list.append((eintrag["erledigt"], eintrag["titelHausaufgabe"], eintrag["faelligkeitdatum"], eintrag["notizen"], eintrag["prioritaet"]))
 
         elif eintrag["modul"] == "Digital Marketing":
             digitalmarketing_list.append((eintrag["erledigt"], eintrag["titelHausaufgabe"], eintrag["faelligkeitdatum"], eintrag["notizen"], eintrag["prioritaet"]))
@@ -73,12 +99,6 @@ def ueberblick():
 
         elif eintrag["modul"] == "Requirement Engineering":
             requirements_list.append((eintrag["erledigt"], eintrag["titelHausaufgabe"], eintrag["faelligkeitdatum"], eintrag["notizen"], eintrag["prioritaet"]))
-
-    # for status in contentmarketing_list:
-    #     if status[3] == "dringend":
-    #         newstatus = status
-    #     else:
-    #         contentmarketing_list.append(status)
 
 
     #Anzahl Einträge in Modulen wird hier gezählt und an das HTML weitergegeben
@@ -111,6 +131,7 @@ def ueberblick():
         Anzreque = 100 / anzahlinsgesamt * Zreque
         Anzreque = int(Anzreque)
 
+    #Damit wenn kein Eintrag besteht, keine Fehlermeldung erscheint
     else:
         Anzcon = 0
         Anzdigma = 0
@@ -120,9 +141,7 @@ def ueberblick():
         Anzprog = 0
         Anzprojekt = 0
         Anzreque = 0
-
-   # Procon = 100/anzahlinsgesamt*Zcon
-
+    #Einträge in JSON speichern
     with open("datenspeicher.json", "w") as datenbank_hausaufgaben:
         json.dump(datenspeicher_list, datenbank_hausaufgaben, indent=4, separators=(",", ":"))
 
@@ -132,6 +151,7 @@ def ueberblick():
 
 @app.route('/erfassen', methods=['GET', 'POST'])
 def erfassen():
+    # Daten von JSON in datenspeicher_list eintragen
     d = open("datenspeicher.json")
     datenspeicher_list = json.load(d)
 

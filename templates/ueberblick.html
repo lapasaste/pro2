@@ -27,9 +27,10 @@
 										<th scope="col">Priorität</th>
 									</thead>
 									{% for eintrag in contentmarketing_list %}
-									<tr>
+									<tr style="background-color: {{ colour }}">
 										<td>
 											<div class="form-check">
+												!--Formbuilder in Django https://docs.djangoproject.com/fr/2.2/topics/forms/-->
 												<input class="form-check-input" type="radio" name="Nein" id="flexRadioDefault5" value="{{ eintrag[1] }}">
 												<label class="form-check-label" for="flexRadioDefault1">nein</label>
 											</div>
