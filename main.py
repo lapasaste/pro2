@@ -92,7 +92,7 @@ def ueberblick():
         elif eintrag["modul"] == "Product Management":
             productmanagement_list.append((eintrag["erledigt"], eintrag["titelHausaufgabe"], eintrag["faelligkeitdatum"], eintrag["notizen"], eintrag["prioritaet"]))
 
-        elif eintrag["modul"] == "Programmieren 2":
+        elif eintrag["modul"] == "Programmierung 2":
             programmieren_list.append((eintrag["erledigt"], eintrag["titelHausaufgabe"], eintrag["faelligkeitdatum"], eintrag["notizen"], eintrag["prioritaet"]))
 
         elif eintrag["modul"] == "Projektmanagement 1":
